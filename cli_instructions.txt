@@ -1,0 +1,58 @@
+This application was developed by Azar Huseynli and Andris Maennik for Python Programming course at Tartu University.
+
+CLI Instructions
+
+1. install arp-scan on raspberry pi or on your linux device.
+        sudo apt install arp-scan
+
+2. Perform "sudo which arp-scan" to see where arp-scan was installed. For me it was:/usr/sbin/arp-scan
+
+3. Edit sudoers list ("sudo visudo" or "sudo nano /etc/sudoers") and add following line to the end:
+        hsynli ALL = (ALL) NOPASSWD: /usr/sbin/arp-scan
+   replace hsynli with your username and /usr/sbin/arp-scan with the location from command in step 2.
+   This will allow "sudo arp-scan" command to be run without typing password from your current user.
+
+4. Pygame should be installed by default, if it is not, install python pygame module from your current user:
+        pip3 install pygame
+
+5. Ensure all of your devices are on and connected to your home network.
+
+6. Open "emailconf.py" file and make changes. Comments there are pretty self explanatory. I would advise to create a seperate email account for this application.
+        I used a yandex.com email account as I had it laying around. If your SMTP port is not 465 but 587, open mailingsystem.py file and make additional modifications there too.
+
+7. If you don't want this application to send emails, then open the areyouthere.py file and comment necessary lines. (one in the beginning, and several at the end.)
+
+8. Copy folder with our program to a desired place. and run areyouthere.py for the first time:
+        python3 areyouthere.py
+   First time it will take at least 1-2 minute for this program to finish. It will make in total 20 scans and create necessary text files.
+
+9. After the first time run is finished, go to the folder and edit "alldevices.txt" and "spieddevices.txt" files.
+        Replace the text in 3rd column of alldevices.txt with correct names for devices according to their mac addresses. This will help you to identify devices easily.
+        Copy whole content of updated alldevices.txt into spieddevices.txt. Delete unnecessary devices from spieddevices.txt. 
+        Spieddevices should contain only mobile phones of family members as their connection or disconnection will trigger sending emails. We don't want to receive
+        an email when someone shuts down their laptop or kindle.
+
+10. Replace audio files with desired audio file if you want to hear something else when someone connects or disconnects. But remember to update emailconf.py file with new audio name.
+
+11. "unknowndevices.txt" will hold list of all devices that connected to your network when they were not in known devices list. This is useful if you forgot to connect any of your devices during first initialization. Connect your new device. Perform scan (python3 areyouthere.py). Find your new device in "unknowndevices.txt", copy/cut it to alldevices.txt and spieddevices.txt if desired.
+
+12. Ensure your raspberry pi audio output is channeled to correct place, (hdmi, or 3.5mm jack). If you are testing on a laptop disregard this step.
+        sudo raspi-config
+        select "advanced options"
+        select "Audio"
+        select the output you want.
+
+13. inside the program directory make areyouthere.py and gui.py executable (if it is not already)
+        sudo chmod +x areyouthere.py
+        sudo chmod +x gui.py
+
+14. Crontab so that script is running every several minutes in the background (Disregard this step if you don't want the script to run automatically, and only testing it.)
+        find absolute path to the directory this program and all his files are located
+        execute "crontab -e" on terminal from the regular user (most likely pi in the case of
+        raspberry pi). paste this to the end of crontab :
+        */5 * * * * cd /ABSOLUTE/PATH/TO/DIRECTORY/ && ./areyouthere.py
+        Currently this script will run every 5 minutes. change 5 to modify.
+        change absolute path to reflect yours.
+        
+        
+        

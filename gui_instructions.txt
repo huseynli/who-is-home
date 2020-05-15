@@ -1,0 +1,54 @@
+This application was developed by Azar Huseynli and Andris Maennik for Python Programming course at Tartu University.
+
+GUI Instructions
+
+You can open CLI instructions and do them, or follow instructions from here. In the end they do the same thing. Some instructions are exactly the same as they require modification to system, outside this application.
+
+1. install arp-scan on raspberry pi or on your linux device.
+        sudo apt install arp-scan
+
+2. Perform "sudo which arp-scan" to see where arp-scan was installed. For me it was:/usr/sbin/arp-scan
+
+3. Edit sudoers list ("sudo visudo" or "sudo nano /etc/sudoers") and add following line to the end:
+        hsynli ALL = (ALL) NOPASSWD: /usr/sbin/arp-scan
+   replace hsynli with your username and /usr/sbin/arp-scan with the location from command in step 2.
+   This will allow "sudo arp-scan" command to be run without typing password from your current user.
+
+4. Pygame should be installed by default, if it is not, install python pygame module from your current user:
+        pip3 install pygame
+
+5. Ensure all of your devices are on and connected to your home network.
+
+6. Make areyouthere.py and gui.py executable.
+        sudo chmod +x areyouthere.py
+        sudo chmod +x gui.py
+
+7. Open GUI of our application. (inside application folder)
+        ./gui.py
+
+8. Click on "Edit configurations button". On the right panel fill variables with appropriate values. DO NOT FORGET TO SAVE.
+
+9. If you don't want this application to send emails, then open the areyouthere.py file and comment necessary lines (one in the beginning, and several at the end.). 
+
+10. If your SMTP port is not 465 but 587, open mailingsystem.py file and make additional modifications there too.
+
+11. After configurations file update, click on "Perform" scan for first time initialization and files population. This button can later be used to perform scans on demand.
+
+12. Click on "Edit known devices" button. Replace 3rd column for each device (after mac address) with proper device name for better identification. DO NOT FORGET TO SAVE.
+
+13. Click on "Edit spied devices" button. Replace 3rd column for each device (after mac address) with proper device name for better identification. It is better to keep only mobile phones in this list as their status change will trigger sending email. We do not want to receive an email each time a person shuts down their laptop or kindle. DO NOT FORGET TO SAVE.
+
+14. Crontab so that script is running every several minutes in the background (Disregard this step if you don't want the script to run automatically, and only testing it.)
+        find absolute path to the directory this program and all his files are located
+        execute "crontab -e" on terminal from the regular user (most likely pi in the case of
+        raspberry pi). paste this to the end of crontab :
+        */5 * * * * cd /ABSOLUTE/PATH/TO/DIRECTORY/ && ./areyouthere.py
+        Currently this script will run every 5 minutes. change 5 to modify.
+        change absolute path to reflect yours.
+
+15. At this stage all necessary configurations are done and application is running properly.
+
+16. "Last report" button will show you the results of last scan.
+
+17. "Empty devices list, Start from scratch" will delete files that were created during scanning. Known devices, spied devices lists and Latest report is gone. Next time you perform a scan, these files will be created again and populated automatically. Meaning you will need to update known devices and spied devices again. Configurations file stays untouched.
+
