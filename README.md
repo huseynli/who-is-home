@@ -62,9 +62,13 @@ If you have decided on using GUI, and done previous steps, you can open GUI with
 ## Contents
 
 emailconf.py - stores configuration variables.
+
 areyouthere.py - core code. This one is intended to be executed periodically via crontab. 
+
 mailingsystem.py - handles everything related to email.
+
 gui.py - Graphical user interface.
+
 .txt - Various txt files created by this app for it's normal operation.
 
 ## Authors
