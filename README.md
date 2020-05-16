@@ -1,4 +1,6 @@
 # Who is home ?
+<img src="https://www.ut.ee/sites/default/files/logod/04.%20Arvutiteaduse%20instituut/arvutiteaduse%20instituut_eng_sinine.png" width=300px></img><img src="https://media.voog.com/0000/0034/3577/photos/IT%20Akadeemia%20logo%20RGB%201000%20px.png" width=300></img>
+
 This code was developed for Python Programming course at Tartu University.
 
 Upon completion of this application we decided to add it to the "IT Student Project Contest" organized by Tartu University.
