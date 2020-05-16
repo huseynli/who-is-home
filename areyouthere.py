@@ -133,7 +133,7 @@ def matcher(fnew):#matches the scan results to known devices list.
     flist = open("alldevices.txt", "r")
     flistread = flist.read()
     flist.seek(0)
-    flog.write("All online devices:\n")
+    flog.write("\nAll online devices:\n")
     for line in fnew:
         if len(line) < 3:#maybe when user edited textfile, he/she added empty lines. this will get rid of that issue
             continue
@@ -183,13 +183,13 @@ if __name__ == '__main__':
         if len(disconnected) !=0 or len(connected) !=0:
             flog.write("Following changes happened in Spied devices list:\n")        
         if len(disconnected) !=0:
-            flog.write("Recently disconnected:\n")
+            flog.write("\nRecently disconnected:\n")
             for w in disconnected:
                 w = str(w)+"\n"
                 flog.write(w)
             print("Recently disconnected:", ''.join("\n"+str(w) for w in disconnected))
         elif len(connected) !=0:
-            flog.write("Recently connected:\n")
+            flog.write("\nRecently connected:\n")
             for w in connected:
                 w = str(w)+"\n"
                 flog.write(w)
