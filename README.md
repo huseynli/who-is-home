@@ -6,6 +6,9 @@ This code was developed for Computer Programming course at Tartu University.
 Upon completion of this application we decided to add it to the "IT Student Project Contest" organized by Tartu University.
 
 It is intended to be installed on a device (running linux) that is connected to home or office network. Preferably raspberry pi that is connected to audio system and runs 24/7. Initially we intended it to be CLI only but later decided to add simple GUI also.
+## Video Demonstration
+
+[![Who is home? - Demonstration](http://img.youtube.com/vi/-RQhl-zif8w/0.jpg)](http://www.youtube.com/watch?v=-RQhl-zif8w)
 
 ## What does this application do ?
 
