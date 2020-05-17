@@ -1,4 +1,4 @@
-This application was developed by Azar Huseynli and Andris Maennik for Python Programming course at Tartu University.
+This application was developed by Azar Huseynli and Andris Maennik for Computer Programming course at Tartu University.
 
 Upon completion of this application we decided to add it to the "IT Student Project Contest" organized by Tartu University.
 
