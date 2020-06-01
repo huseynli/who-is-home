@@ -1,9 +1,4 @@
 # Who is home ?
-<img src="https://www.ut.ee/sites/default/files/logod/04.%20Arvutiteaduse%20instituut/arvutiteaduse%20instituut_eng_sinine.png" width=300px></img><img src="https://media.voog.com/0000/0034/3577/photos/IT%20Akadeemia%20logo%20RGB%201000%20px.png" width=300></img>
-
-This code was developed for Computer Programming course at Tartu University.
-
-Upon completion of this application we decided to add it to the "IT Student Project Contest" organized by Tartu University.
 
 It is intended to be installed on a device (running linux) that is connected to home or office network. Preferably raspberry pi that is connected to audio system and runs 24/7. Initially we intended it to be CLI only but later decided to add simple GUI also.
 ## Video Demonstration
