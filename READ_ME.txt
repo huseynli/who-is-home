@@ -1,6 +1,5 @@
-This application was developed by Azar Huseynli and Andris Maennik for Computer Programming course at Tartu University.
+This application was developed by Azar Huseynli and Andris Maennik.
 
-Upon completion of this application we decided to add it to the "IT Student Project Contest" organized by Tartu University.
 
 It is intended to be installed on a device (running linux) that is connected to home or office network. Preferably raspberry pi that is connected to audio system and runs 24/7. Initially we intended it to be CLI only but later decided to add simple GUI also.
 
